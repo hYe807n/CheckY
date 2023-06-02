@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view"
+>
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_checkin"
+                android:icon="@android:drawable/ic_menu_edit"
+                android:title="@string/menu_checkin"/>
+        <item
+                android:id="@+id/nav_inform"
+                android:icon="@android:drawable/ic_menu_info_details"
+                android:title="@string/menu_inform"/>
+        <item
+                android:id="@+id/nav_cyber"
+                android:icon="@android:drawable/ic_lock_idle_alarm"
+                android:title="@string/menu_cyber"/>
+        <item
+                android:id="@+id/nav_jongjung"
+                android:icon="@android:drawable/ic_menu_set_as"
+                android:title="@string/menu_jongjung"/>
+        <item
+                android:id="@+id/nav_timetable"
+                android:icon="@android:drawable/ic_menu_today"
+                android:title="@string/menu_timetable"/>
+    </group>
+</menu>
