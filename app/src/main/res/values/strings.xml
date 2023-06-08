@@ -7,9 +7,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">로그아웃</string>
 
-<!--    <string name="menu_home">Checky</string>-->
-<!--    <string name="menu_gallery">Gallery</string>-->
-<!--    <string name="menu_slideshow">Slideshow</string>-->
+    <!--    <string name="menu_home">Checky</string>-->
+    <!--    <string name="menu_gallery">Gallery</string>-->
+    <!--    <string name="menu_slideshow">Slideshow</string>-->
 
     // Custom menu
     <string name="menu_inform">내 정보 관리</string>
@@ -17,4 +17,13 @@
     <string name="menu_cyber">사이버 캠퍼스</string>
     <string name="menu_jongjung">종합 정보 서비스</string>
     <string name="menu_timetable">강의시간표</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>

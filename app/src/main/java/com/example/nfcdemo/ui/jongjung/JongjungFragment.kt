@@ -28,7 +28,7 @@ class JongjungFragment : Fragment() {
         _binding = FragmentJongjungBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textJongjung
+        val textView : TextView = binding.textJongjung
         jongjungViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

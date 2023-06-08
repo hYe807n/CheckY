@@ -1,9 +1,12 @@
 package com.example.nfcdemo.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
@@ -12,6 +15,7 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
+import com.example.nfcdemo.MainActivity
 import com.example.nfcdemo.databinding.ActivityLoginBinding
 
 import com.example.nfcdemo.R
@@ -25,7 +29,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        // Splash
+        setContentView(R.layout.activity_login)
 
         val username = binding.username
         val password = binding.password
@@ -117,6 +122,7 @@ class LoginActivity : AppCompatActivity() {
 /**
  * Extension function to simplify setting an afterTextChanged action to EditText components.
  */
+
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
         override fun afterTextChanged(editable: Editable?) {
