@@ -22,8 +22,8 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="welcome">"환영합니다."</string>
+    <string name="invalid_username">ID를 다시 확인해주세요.</string>
+    <string name="invalid_password">PassWord를 다시 확인해주세요.</string>
     <string name="login_failed">"Login failed"</string>
 </resources>

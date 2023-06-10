@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     // id for adapt to link
-    private lateinit var cyberId : View
-    private lateinit var jongJongId : View
+    private lateinit var cyberId: View
+    private lateinit var jongJongId: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +39,11 @@ class MainActivity : AppCompatActivity() {
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.nav_checkin, R.id.nav_inform, R.id.nav_cyber, R.id.nav_jongjung, R.id.nav_timetable), drawerLayout)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_checkin, R.id.nav_inform, R.id.nav_cyber, R.id.nav_jongjung, R.id.nav_timetable
+            ), drawerLayout
+        )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
@@ -56,21 +59,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
-    // Link to cybercampus or jongjung
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when(item.itemId) {
-//            R.id.nav_cyber -> {
-//                Intent(Intent.ACTION_VIEW, Uri.parse("https://cde.yongin.ac.kr/home/mainHome/Form/main"))
-//                startActivity(intent)
-//            }
-//            R.id.nav_jongjung -> {
-//                Intent(Intent.ACTION_VIEW, Uri.parse("https://total.yongin.ac.kr/login.do"))
-//                startActivity(intent)
-//            }
-//            else -> return false
-//        }
-//
-//        return super.onOptionsItemSelected(item)
-//    }
 }
+
+

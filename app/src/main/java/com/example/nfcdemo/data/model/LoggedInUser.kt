@@ -5,5 +5,6 @@ package com.example.nfcdemo.data.model
  */
 data class LoggedInUser(
     val userId: String,
-    val displayName: String
+    val displayName: String,
+    val id : String
 )
