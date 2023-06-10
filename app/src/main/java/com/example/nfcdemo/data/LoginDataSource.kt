@@ -8,10 +8,10 @@ import java.io.IOException
  */
 class LoginDataSource {
 
-    fun login(username: String, password: String): Result<LoggedInUser> {
+    fun login(userId: String, password: String): Result<LoggedInUser> {
         try {
-            // TODO: handle loggedInUser authentication
-            val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), "Jane Doe", username)
+            // TODO: displayName:"김하연" -> database의 username으로
+            val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), "김하연", userId)
             return Result.Success(fakeUser)
         } catch (e: Throwable) {
             return Result.Error(IOException("Error logging in", e))

@@ -1,7 +1,5 @@
 package com.example.nfcdemo.ui.login
 
-import android.widget.ImageView
-
 /**
  * User details post authentication that is exposed to the UI
  */
