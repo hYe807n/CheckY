@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.inform.InformFragment">
+        tools:context=".ui.inform.InformFragment" android:minWidth="30dp" android:minHeight="60dp">
 
     <ImageView
             android:src="@mipmap/profile"
@@ -36,7 +36,57 @@
             app:layout_constraintStart_toEndOf="@+id/inform_profile"
             app:layout_constraintTop_toBottomOf="@+id/inform_username"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.045"
             android:layout_marginStart="16dp" android:layout_marginTop="16dp"/>
+    <TextView
+            android:text="AI학부_AI전공"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/inform_usermajor"
+            app:layout_constraintTop_toBottomOf="@+id/inform_username" android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/inform_profile" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/inform_userid" app:layout_constraintHorizontal_bias="0.0"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="342dp"
+            android:layout_height="436dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inform_profile" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0"
+            android:id="@+id/linearLayout" android:layout_marginStart="32dp" android:layout_marginTop="80dp">
+        <TextView
+                android:text="자바프로그래밍-김은화 교수님\n월 09:25-12:25"
+                android:layout_width="match_parent" android:paddingBottom="10dp" android:paddingTop="10dp"
+                android:layout_height="wrap_content" android:id="@+id/textView3"/>
+        <TextView
+                android:text="컴퓨터 네트워크-이중호 교수님\n월 13:35-16:20"
+                android:layout_width="match_parent" android:paddingBottom="10dp" android:paddingTop="10dp"
+                android:layout_height="wrap_content" android:id="@+id/textView6"/>
+        <TextView
+                android:text="패턴인식-김경중 교수님\n화 09:25-12:25"
+                android:layout_width="match_parent" android:paddingBottom="10dp" android:paddingTop="10dp"
+                android:layout_height="wrap_content" android:id="@+id/textView7"/>
+        <TextView
+                android:text="AI수학-이완주 교수님\n화 13:35-16:20"
+                android:layout_width="match_parent" android:paddingBottom="10dp" android:paddingTop="10dp"
+                android:layout_height="wrap_content" android:id="@+id/textView13"/>
+        <TextView
+                android:text="컴퓨터비전-이경재 교수님\n수 09:25-12:25"
+                android:layout_width="match_parent" android:paddingBottom="10dp" android:paddingTop="10dp"
+                android:layout_height="wrap_content" android:id="@+id/textView14"/>
+        <TextView
+                android:text="자료구조-이중호 교수님\n수 13:35-16:20"
+                android:layout_width="match_parent" android:paddingBottom="10dp" android:paddingTop="10dp"
+                android:layout_height="wrap_content" android:id="@+id/textView15"/>
+    </LinearLayout>
+    <TextView
+            android:text="나의 수강 과목"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            android:layout_width="189dp"
+            android:layout_height="41dp" android:id="@+id/textView16"
+            app:layout_constraintTop_toBottomOf="@+id/inform_profile"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.804" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.144"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

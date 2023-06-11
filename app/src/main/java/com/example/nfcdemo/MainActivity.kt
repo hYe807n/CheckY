@@ -85,7 +85,7 @@ open class MainActivity : AppCompatActivity() {
 
         val jongjung = navigationView.menu.findItem(R.id.nav_jongjung)
         jongjung.setOnMenuItemClickListener {
-            val url = "https://total.yongin.ac.kr/login.do/"
+            val url = "https://total.yongin.ac.kr/login.do"
             intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             startActivity(intent)
             true
