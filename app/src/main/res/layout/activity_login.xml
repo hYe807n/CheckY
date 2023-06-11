@@ -88,17 +88,17 @@
             app:layout_constraintVertical_bias="0.3"/>
     <ImageView
             android:layout_width="320dp"
-            android:layout_height="165dp" app:srcCompat="@drawable/splash" android:id="@+id/login_img"
+            android:layout_height="165dp" app:srcCompat="@drawable/app_icon" android:id="@+id/login_img"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.28"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.339"
             app:layout_constraintHorizontal_bias="0.494"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/logo" android:id="@+id/imageView4"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="@+id/login_img"
-            app:layout_constraintVertical_bias="0.459"/>
+            app:layout_constraintVertical_bias="0.423"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

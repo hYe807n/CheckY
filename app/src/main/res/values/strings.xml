@@ -13,7 +13,7 @@
     <!--    <string name="menu_slideshow">Slideshow</string>-->
 
     // Custom menu
-    <string name="menu_inform">내 정보 관리</string>
+    <string name="menu_inform">내 정보</string>
     <string name="menu_checkin">출석체크</string>
     <string name="menu_cyber">사이버 캠퍼스</string>
     <string name="menu_jongjung">종합 정보 서비스</string>

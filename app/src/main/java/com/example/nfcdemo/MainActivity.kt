@@ -1,8 +1,8 @@
 package com.example.nfcdemo
 
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,22 +11,29 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.nfcdemo.databinding.ActivityMainBinding
-import com.example.nfcdemo.ui.login.LoginActivity
+import com.example.nfcdemo.ui.inform.InformFragment
 import com.example.nfcdemo.ui.login.StartActivity
 import com.google.android.material.navigation.NavigationView
-import org.w3c.dom.Text
 
-class MainActivity : AppCompatActivity() {
+
+open class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    lateinit var context : Context
+
+    var username : String? = null
+    var userid : String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +47,13 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 
+        // hayeon) set nav infrom
         val headerView: View = navView.getHeaderView(0)
-        val textUsername : TextView = headerView.findViewById<TextView>(R.id.nav_header_username)
-        val textId : TextView = headerView.findViewById<TextView>(R.id.nav_header_id)
+        val textUsername: TextView = headerView.findViewById<TextView>(R.id.nav_header_username)
+        val textId: TextView = headerView.findViewById<TextView>(R.id.nav_header_id)
+        val navigationView : NavigationView = binding.navView
+        username = intent.getStringExtra("username")
+        userid = intent.getStringExtra("userid")
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -55,13 +66,17 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        //val textUsername : TextView = findViewById(R.id.nav_header_username)
-
         // TODO : text_username -> database의 username , text_id -> database의 userid
-        textUsername.text = "김하연"
-        textId.text = "202178016"
-    }
+        textUsername.text = username
+        textId.text = userid
 
+        val sharedPreference = getSharedPreferences("file name", Context.MODE_PRIVATE)
+        val editor = sharedPreference.edit()
+
+        editor.putString("username", username)
+        editor.putString("userid", userid)
+        editor.apply()
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -77,15 +92,15 @@ class MainActivity : AppCompatActivity() {
 
     // hayeon) logout function
     override fun onOptionsItemSelected(item : MenuItem) : Boolean {
-        when (item.itemId) {
 
+        when (item.itemId) {
             R.id.log_out -> {   // Go back to the login window and exit mainActivity
                 val intent = Intent(this, StartActivity::class.java)
 
                 val dlg: AlertDialog.Builder = AlertDialog.Builder(this@MainActivity,  android.R.style.Theme_DeviceDefault_Light_Dialog_NoActionBar_MinWidth)
                 dlg.setMessage("로그아웃 하시겠습니까?")
-                dlg.setNegativeButton("취소", DialogInterface.OnClickListener { dialog, which -> })
-                dlg.setPositiveButton("확인", DialogInterface.OnClickListener { dialog, which ->
+                dlg.setNegativeButton("취소", DialogInterface.OnClickListener { _, _ -> })
+                dlg.setPositiveButton("확인", DialogInterface.OnClickListener { _, _ ->
                     Toast.makeText(
                         applicationContext,
                         "로그아웃",
@@ -98,6 +113,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Handle navigation view item clicks here.
+        var id = item.itemId
+        when (id) {
+
+        }
+        //close navigation drawer
+        //close navigation drawer
+        DrawerLayout.closeDrawer(GravityCompat.START)
+        return true
     }
 }
 

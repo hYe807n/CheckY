@@ -18,7 +18,7 @@
             android:layout_width="101dp"
             android:layout_height="87dp"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            app:srcCompat="@mipmap/profile"
+            app:srcCompat="@drawable/profile"
             android:contentDescription="@string/nav_header_desc"
             android:id="@+id/imageView" tools:srcCompat="@drawable/profile"/>
 

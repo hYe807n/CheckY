@@ -32,6 +32,7 @@ class CyberFragment : Fragment() {
         cyberViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
         return root
     }
 

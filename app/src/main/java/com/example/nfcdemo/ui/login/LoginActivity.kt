@@ -24,6 +24,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: ActivityLoginBinding
 
+    private lateinit var userName : String
+    private lateinit var userId: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -59,10 +61,11 @@ class LoginActivity : AppCompatActivity() {
             if (loginResult.error != null) {
                 showLoginFailed(loginResult.error)
             }
-            if (loginResult.success != null) {
+            if (loginResult.success != null) {      // hayeon) move to mainActivity
                 updateUiWithUser(loginResult.success)
-
                 val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("username", userName)
+                intent.putExtra("userid", userId)
                 startActivity(intent)
             }
             setResult(Activity.RESULT_OK)
@@ -104,14 +107,15 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    // hayeon) alert user login
     private fun updateUiWithUser(model: LoggedInUserView) {
         val welcome = getString(R.string.welcome)
-        val displayName = model.displayName
-        val id = model.id
+        userName = model.displayName
+        userId  = model.id
         // TODO : initiate successful logged in experience
         Toast.makeText(
             applicationContext,
-            "$welcome $displayName ($id) 님",
+            "$welcome $userName ($userId) 님",
             Toast.LENGTH_LONG
         ).show()
     }
