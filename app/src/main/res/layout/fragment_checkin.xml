@@ -6,19 +6,57 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.checkin.CheckinFragment">
-
+    <Button
+            android:text="출석체크"
+            android:layout_width="122dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_height="61dp" android:id="@+id/button"
+            app:backgroundTint="@color/design_default_color_secondary"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="0.361"/>
     <TextView
-            android:id="@+id/text_checkin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
+            android:text="자바 프로그래밍"
+            android:textStyle="bold"
+            android:textSize="34dp"
+            android:layout_width="230dp"
+            android:layout_height="49dp" android:id="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.127" app:layout_constraintVertical_bias="0.039"/>
+    <TextView
+            android:text="김은화 교수님"
+            android:textSize="20dp"
+            android:layout_width="113dp"
+            android:layout_height="31dp" android:id="@+id/textView2"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.077" app:layout_constraintVertical_bias="0.108"/>
+    <TextView
+            android:text="월 09:25-12:25"
+            android:textSize="28dp"
+            android:layout_width="207dp"
+            android:layout_height="91dp" android:id="@+id/textView4"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.112" app:layout_constraintVertical_bias="0.209"/>
+    <TextView
+            android:text="[로그인 기기 정보]\nSM-S901N\n\n[출석 체크 시간]\n09:23:34"
+            android:layout_width="wrap_content"
+            android:textSize="22dp"
+            android:layout_height="wrap_content" android:id="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.495" app:layout_constraintVertical_bias="0.0"
+            android:layout_marginTop="25dp"/>
+    <TextView
+            android:text="출석체크완료!"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:textSize="32dp"
+            android:layout_height="wrap_content" android:id="@+id/textView9"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.164"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

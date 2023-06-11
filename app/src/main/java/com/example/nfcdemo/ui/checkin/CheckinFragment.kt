@@ -28,10 +28,7 @@ class CheckinFragment : Fragment() {
         _binding = FragmentCheckinBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textCheckin
-        checkinViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
         return root
     }
 
