@@ -3,6 +3,7 @@ package com.example.nfcdemo
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,22 +12,17 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.menu.MenuView
-import androidx.core.view.GravityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainerView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.nfcdemo.databinding.ActivityMainBinding
-import com.example.nfcdemo.ui.inform.InformFragment
 import com.example.nfcdemo.ui.login.StartActivity
-import com.google.android.material.internal.NavigationMenuItemView
 import com.google.android.material.navigation.NavigationView
-
 
 open class MainActivity : AppCompatActivity() {
 
@@ -36,7 +32,6 @@ open class MainActivity : AppCompatActivity() {
 
     var username : String? = null
     var userid : String? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,7 +75,21 @@ open class MainActivity : AppCompatActivity() {
         editor.putString("userid", userid)
         editor.apply()
 
-        var menu = navigationView.menu.findItem(R.id.nav_checkin)
+        val cyber = navigationView.menu.findItem(R.id.nav_cyber)
+        cyber.setOnMenuItemClickListener {
+            val url = "https://cde.yongin.ac.kr/home/mainHome/Form/main/"
+            intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+            true
+        }
+
+        val jongjung = navigationView.menu.findItem(R.id.nav_jongjung)
+        jongjung.setOnMenuItemClickListener {
+            val url = "https://total.yongin.ac.kr/login.do/"
+            intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+            true
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -97,7 +106,6 @@ open class MainActivity : AppCompatActivity() {
 
     // hayeon) logout function
     override fun onOptionsItemSelected(item : MenuItem) : Boolean {
-
         when (item.itemId) {
             R.id.log_out -> {   // Go back to the login window and exit mainActivity
                 val intent = Intent(this, StartActivity::class.java)
@@ -118,6 +126,9 @@ open class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+    private fun setOnMenuItemClickListener() {
+
     }
 }
 
