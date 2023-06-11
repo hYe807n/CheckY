@@ -11,9 +11,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.menu.MenuView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentContainerView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -22,6 +24,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.nfcdemo.databinding.ActivityMainBinding
 import com.example.nfcdemo.ui.inform.InformFragment
 import com.example.nfcdemo.ui.login.StartActivity
+import com.google.android.material.internal.NavigationMenuItemView
 import com.google.android.material.navigation.NavigationView
 
 
@@ -76,6 +79,9 @@ open class MainActivity : AppCompatActivity() {
         editor.putString("username", username)
         editor.putString("userid", userid)
         editor.apply()
+
+        var menu = navigationView.menu.findItem(R.id.nav_checkin)
+        menu.setOnMenuItemClickListener {  }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -113,18 +119,6 @@ open class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        var id = item.itemId
-        when (id) {
-
-        }
-        //close navigation drawer
-        //close navigation drawer
-        DrawerLayout.closeDrawer(GravityCompat.START)
-        return true
     }
 }
 
