@@ -81,7 +81,6 @@ open class MainActivity : AppCompatActivity() {
         editor.apply()
 
         var menu = navigationView.menu.findItem(R.id.nav_checkin)
-        menu.setOnMenuItemClickListener {  }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
