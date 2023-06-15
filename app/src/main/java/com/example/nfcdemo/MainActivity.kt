@@ -1,4 +1,4 @@
-package com.example.nfcdemo
+package com.example.nfcdemo // ^__^
 
 import android.content.Context
 import android.content.DialogInterface
